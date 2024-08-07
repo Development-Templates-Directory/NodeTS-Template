@@ -1,5 +1,5 @@
-# {{github.repo | replace "-" " " | titlecase}}
+# {{param "github.repo" | replace "-" " " | titlecase}}
 
 ...
 
-{{git.name}}<{{git.email}}>
+{{param "git.name"}}<{{param "git.email"}}>
