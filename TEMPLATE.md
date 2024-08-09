@@ -26,7 +26,7 @@ gh repo create Development-Templates-Directory/Base-Template --public --disable-
 ```bash
 # within the template organization directory
 
-gh repo create Development-Templates-Directory/<New-Template> --public --clone --template Development-Template-Directory/<Base-Template> && gh repo edit Development-Templates-Directory/<New-Template> --template
+gh repo create Development-Templates-Directory/<New-Template> --public --clone --template Development-Templates-Directory/<Base-Template> && gh repo edit Development-Templates-Directory/<New-Template> --template
 ```
 2. To received updates from the base template,
 ```bash
@@ -34,7 +34,8 @@ gh repo create Development-Templates-Directory/<New-Template> --public --clone -
 
 cd <New-Template> && git remote add template https://github.com/Development-Templates-Directory/<Base-Template>.git
 ```
-*Note: Many remotes can be added if we wish to build a composite template. The main remote has always the name `template`. The additional ones follow the format, `template-xxxxx`.*
+*Note: Many remotes can be added if we wish to build a composite template. The main remote has always the name `template`. The additional ones follow the format, `template-xxxxx`. To remove a remote, `git remote remove template[-xxxxx]`*
+
 3. To sync the new template with its remotes,
 ```bash
 # within the new template directory
@@ -47,6 +48,10 @@ git fetch --all && git merge template/main --allow-unrelated-histories -m "Synci
 
 gh template clone <Project-Name> --template Development-Templates-Directory/<Some-Template> --public
 ```
+
+# Template Tree View
+
+![](./.ttsys/tree.png)
 
 # Author
 Abderraouf Belalia<<abderraoufbelalia@symplectic.link>>
